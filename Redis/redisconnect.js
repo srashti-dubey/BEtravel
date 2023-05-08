@@ -1,5 +1,5 @@
-// const redis = require('redis')
-// const test = require('../Model/City')
+const redis = require('redis')
+const test = require('../Model/City')
 
 // let redisclient;
 //  (async () => {
@@ -29,45 +29,45 @@
 // }
 
 
-// async function getDataFromCacheOrMongoDB(cacheKey) {
+async function getDataFromCacheOrMongoDB(cacheKey) {
 
-//     try {
-//         const cacheData = null
-//         await redisclient.get(cacheKey)
+    try {
+        const cacheData = null
+        await redisclient.get(cacheKey)
 
-//         if (cacheData) {
+        if (cacheData) {
 
-//             console.log('cache hit', "heyyyy redis")
+            console.log('cache hit', "heyyyy redis")
 
-//             const fetchedData = JSON.parse(cacheData)
+            const fetchedData = JSON.parse(cacheData)
 
-//             return fetchedData
+            return fetchedData
 
-//         } else {
+        } else {
 
-//             console.log('cache miss')
+            console.log('cache miss')
 
-//             let fetchedData = await test.find();
+            let fetchedData = await test.find();
 
-//             await redisclient.set(cacheKey, JSON.stringify(fetchedData), 'EX', 3000)
+            await redisclient.set(cacheKey, JSON.stringify(fetchedData), 'EX', 3000)
 
-//             return fetchedData
+            return fetchedData
 
-//         }
+        }
 
-//     } catch (err) {
+    } catch (err) {
 
-//         console.error(err)
+        console.error(err)
 
-//         return null
-//     }
-// }
+        return null
+    }
+}
 
-// module.exports = {
+module.exports = {
 
-//     getDataFromCacheOrMongoDB,
+    getDataFromCacheOrMongoDB,
 
-//     removeRedisData,
+    // removeRedisData,
 
-// }
+}
 
