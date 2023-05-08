@@ -43,6 +43,7 @@ router.get("/Cityone/:id", async (req, res) => {
 })
 
 router.get("/Citygetall", async (req, res) => {
+    console.log("getting city get all request")
     controllergetall.city(req, res);
 })
 
