@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/test',
+mongoose.connect('mongodb+srv://srashtidubey27:7qwertyuiop8@cluster0.tofakcd.mongodb.net/?retryWrites=true&w=majority',
+// mongoose.connect('mongodb://127.0.0.1:27017/test',
 
 {
 
